@@ -1,0 +1,78 @@
+/* @import "./icon.css"; */
+
+:root {
+  --lightness: 0%;
+  --colorPorcentage: 0%;
+  --background: hsla(250, 24%, var(--lightness), 1);
+  --primary: #0f0e17;
+  --secondary: #ff8906;
+  --secondaryHover: rgba(255, 137, 6, 0.4);
+  --secondaryActive: rgba(255, 137, 6, 0.7);
+  --tertiary: rgba(48, 127, 226, 0.3);
+  --grades: 0deg;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.main {
+  background: var(--background);
+}
+.wrapper {
+  padding: 0 1rem;
+}
+
+.main__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  flex-basis: 600px;
+  gap: 1rem;
+}
+
+.icon-sun {
+  font-size: 2rem;
+  color: var(--secondary);
+  transform: rotate(var(--grades));
+}
+
+.slider__range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 0.5rem;
+
+  background: var(--primary);
+  background-image: linear-gradient(
+    to right,
+    var(--secondary) var(--colorPorcentage),
+    var(--tertiary) 0%
+  );
+
+  border-radius: 15px;
+}
+
+.slider__range::-webkit-slider-thumb {
+  appearance: none;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--secondary);
+}
+
+.slider__range:hover::-webkit-slider-thumb {
+  box-shadow: 0 0 0 12px var(--secondaryHover);
+}
+
+.slider__range:active::-webkit-slider-thumb {
+  box-shadow: 0 0 0 12px var(--secondaryActive);
+}
+
+.is-active-animate {
+  animation: rotateIcon 2s linear infinite;
+}
